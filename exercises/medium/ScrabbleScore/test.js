@@ -1,6 +1,6 @@
 const score = require("./index");
 
-describe("Scrabble", () => {
+describe("Scrabbnle", () => {
   test("lowercase letter", () => {
     expect(score("a")).toEqual(1);
   });
