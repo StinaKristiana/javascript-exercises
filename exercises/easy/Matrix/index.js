@@ -35,13 +35,17 @@
  */
 
 class Matrix {
-  constructor(matrix) {
-    this.matrix = matrix;
+  constructor(matrixString) {
+    this.rows = matrixString.split('\n')
+      .map(rowString => rowString.split(' ').map(Number))
+
+    this.columns = transpose(this.rows)
   }
-
-  get rows() {}
-
-  get columns() {}
 }
 
+const transpose = matrix => matrix[0].map((_, i) => matrix.map(row => row[i]))
+
+
 module.exports = Matrix;
+  
+

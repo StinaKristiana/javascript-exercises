@@ -14,6 +14,23 @@
  * s.pop(); // returns 1
  */
 
-class Stack {}
+class Stack {
+    constructor() {
+        this.item = []
+    }
+    push(item){
+        this.items.push(item)
+
+    }
+
+    pop(item){
+        this.items.push(item)
+
+    }
+
+    peak(){
+        this.items.push(item)
+    }
+}
 
 module.exports = Stack;

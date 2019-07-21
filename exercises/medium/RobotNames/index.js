@@ -18,17 +18,18 @@
 const alphabet = "abcdefghijklmnopqrstuvwxyz".toLocaleUpperCase();
 
 function generateAllRobotNames() {
+    let result = []
     for (let i in alphabet) {
         const firstLetter = alphabet[i]
-        for (let j in alphabet){
+        for (let j in alphabet) {
             const secondLetter = alphabet[j]
-            for (let x = 0; x < 10; x++){
+            for (let x = 0; x < 10; x++) {
                 const firstNumber = x
                 for (let y = 0; y < 10; y++) {
-                    const secondNumber = y 
+                    const secondNumber = y
                     for (let z = 0; z < 10; z++) {
                         const thirdNumber = z
-                        SpeechRecognitionResult.push (
+                        result.push(
                             firstLetter
                             + secondLetter
                             + firstNumber
@@ -40,13 +41,9 @@ function generateAllRobotNames() {
             }
         }
     }
-
+    return result.sort(() => 0.5 - Math.random());
 }
-
-const allRobotNames = generateAllRobotNames()
-
-
-let usedRobotNames = []
+let RobotNames = generateAllRobotNames()
 
 function randomLetter() {
     return alphabet[Math.floor(Math.random() * alphabet.length)];
@@ -62,46 +59,21 @@ class Robot {
     }
 
     reset() {
-        this.name = Robot.generateName();
+        this.hiddenName = Robot.generateName();
     }
+get name() {
+return this.hiddenName
+}
 
+set name(name) {
+    throw new Error()
+}
     static generateName() {
-
-
-        do {
-            const randomIndex = Math.floor(
-                Math.random() * allRobotNames.length
-            )
-            name = allRobotNames(randomIndex)
-        } while (usedRobotNames.indexOf(name) > -1) {
-            usedRobotNames.push(name)
-            return name
+            return RobotNames.pop()
         }
-        //       let name 
-        //       do {
-        //           name = firstLetter() +
-        //           secondLetter() +
-        //           randomNumber() +
-        //           randomNumber() +
-        //           randomNumber()
-        //   } while (robotNames.indexOf(name) < 0){
-        // robotNames.push(name)
-        // return name
-        // }
-        //     // const firstLetter = randomLetter();
-        //     // const secondLetter = randomLetter();
-        // return (
-        //   firstLetter +
-        //   secondLetter +
-        //   randomNumber() +
-        //   randomNumber() +
-        //   randomNumber()
-        // if (robotNames.indexOf(name) >-1){
-        // }
-    }
 
     static releaseNames() {
-        robotNames = [];
+        RobotNames = generateAllRobotNames()
     }
 }
 
