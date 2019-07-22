@@ -40,3 +40,34 @@
  *      ···B·B···
  *      ····A····
  */
+const alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+
+class Diamond {
+    makeDiamond(letter) {
+        if (letter === "A") return letter + "\n";
+        let diamond = [],
+            idx = alphabet.indexOf(letter);
+        let outer = ((idx + 1) * 2 - 1) / 2;
+        let inner = 0;
+
+        for (let i = 0; i < idx; i++) {
+            if (i === 0) {
+                diamond.push(`${" ".repeat(outer)}${alphabet[i]}${" ".repeat(outer)}`);
+                inner++;
+            } else {
+                diamond.push(`${" ".repeat(outer)}${alphabet[i]}${" ".repeat(inner)}${alphabet[i]}${" ".repeat(outer)}`);
+                inner += 2;
+            }
+            outer -= 1;
+        }
+
+        diamond.push(`${letter}${" ".repeat(inner)}${letter}`);
+
+        for (let i = diamond.length - 2; i >= 0; i--) {
+            diamond.push(diamond[i]);
+        }
+        return diamond.join("\n") + "\n";
+    }
+}
+
+module.exports = Diamond;
