@@ -10,7 +10,15 @@
  */
 
 class Words {
-  count(str) {}
+  count(text) {
+    return text.trim()
+      .toLowerCase()
+      .split(/\s+/)
+      .reduce((accumulator, current) => {
+        accumulator[current] = accumulator[current] + 1 || 1
+        return accumulator
+      }, Object.create(null))
+  }
 }
 
 module.exports = Words;

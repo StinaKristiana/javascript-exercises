@@ -31,8 +31,27 @@ class PhoneNumber {
   constructor(input) {
     this.input = input;
   }
+  number() {
+    let number = this.input.replace(/[ -.\(\)\+]/g, '')
+    console.log(number)
+    if (number.search(/[^\d]/) >= 0) {
+      return null
+    }
 
-  number() {}
+    if (number.length === 11 && number.startsWith('1')) {
+      number = number.slice(1)
+    }
+
+    if (number.startsWith('1') || number.startsWith('0')) {
+      return null
+    } else if (number.slice(3, 4) === '0' || number.slice(3, 4) === '1') {
+      return null
+    } else if (number.length !== 10) {
+      return null
+    } else {
+      return number
+    }
+  }
 }
 
 module.exports = PhoneNumber;

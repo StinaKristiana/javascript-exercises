@@ -7,13 +7,22 @@
 class HighScores {
   constructor(input) {
     this.scores = input;
+    this.input = input;
+    this.sortedInput = [...this.input];
+    this.sortedInput.sort(function (a, b) { return b - a })
   }
 
-  get latest() {}
+  get latest() {
+    return this.input[this.input.length - 1];
+  }
 
-  get personalBest() {}
+  get personalBest() {
+    return this.sortedInput[0];
+  }
 
-  get personalTopThree() {}
+  get personalTopThree() {
+    return this.sortedInput.slice(0, 3);
+  }
 }
 
 module.exports = HighScores;

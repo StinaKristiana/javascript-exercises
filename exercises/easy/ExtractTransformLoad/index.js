@@ -33,6 +33,16 @@
  * A final note about scoring, Scrabble is played around the world in a variety of languages, each with its own unique scoring table. For example, an "E" is scored at 2 in the Māori-language version of the game while being scored at 4 in the Hawaiian-language version.
  */
 
-function transform(old) {}
+function transform(old) {
+    let newObj = {}
+
+    for (let i in old) {
+        for (let value of Object.values(old[i])) {
+            let tmp = value.toLowerCase()
+            newObj[tmp] = Number(i)
+        }
+    }
+    return newObj 
+}
 
 module.exports = transform;
