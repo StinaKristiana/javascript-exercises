@@ -55,7 +55,7 @@ function randomNumber() {
 
 class Robot {
     constructor() {
-        this.name = Robot.generateName();
+        this.hiddenName = Robot.generateName();
     }
 
     reset() {
