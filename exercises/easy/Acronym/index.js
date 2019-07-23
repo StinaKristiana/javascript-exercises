@@ -7,13 +7,13 @@
  */
 
 function parse(input) {
-   const parsedInput = input.replace(/[^a-zA-Z0-9']/g,' ')
-   const words = parsedInput.split(' ');
-   let result = [];
-   words.forEach(word => {
-       result.push(word[0])
-   })
-     return result.join('').toUpperCase()  
-   };
-   
+  const parsedInput = input.replace(/[^a-zA-Z0-9']/g, " ");
+  const words = parsedInput.split(" ");
+  let result = [];
+  words.forEach(word => {
+    result.push(word[0]);
+  });
+  return result.join("").toUpperCase();
+}
+
 module.exports = parse;

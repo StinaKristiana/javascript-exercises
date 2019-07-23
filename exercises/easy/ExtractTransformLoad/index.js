@@ -34,15 +34,15 @@
  */
 
 function transform(old) {
-    let newObj = {}
+  let newObj = {};
 
-    for (let i in old) {
-        for (let value of Object.values(old[i])) {
-            let tmp = value.toLowerCase()
-            newObj[tmp] = Number(i)
-        }
+  for (let i in old) {
+    for (let value of Object.values(old[i])) {
+      let tmp = value.toLowerCase();
+      newObj[tmp] = Number(i);
     }
-    return newObj 
+  }
+  return newObj;
 }
 
 module.exports = transform;

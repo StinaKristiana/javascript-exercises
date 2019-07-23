@@ -12,11 +12,11 @@
  */
 
 function validate(number) {
-    const numberToString = String(number)
-    let result = 0;
-    for (var i = 0; i < numberToString.length; i++) {
-        result += Math.pow(numberToString[i], numberToString.length);
-    }
-    return (result == number) ? true : false;
-};
+  const numberToString = String(number);
+  let result = 0;
+  for (var i = 0; i < numberToString.length; i++) {
+    result += Math.pow(numberToString[i], numberToString.length);
+  }
+  return result == number ? true : false;
+}
 module.exports = validate;

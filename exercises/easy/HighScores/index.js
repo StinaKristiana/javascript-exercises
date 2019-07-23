@@ -9,7 +9,9 @@ class HighScores {
     this.scores = input;
     this.input = input;
     this.sortedInput = [...this.input];
-    this.sortedInput.sort(function (a, b) { return b - a })
+    this.sortedInput.sort(function(a, b) {
+      return b - a;
+    });
   }
 
   get latest() {

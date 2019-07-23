@@ -11,13 +11,14 @@
 
 class Words {
   count(text) {
-    return text.trim()
+    return text
+      .trim()
       .toLowerCase()
       .split(/\s+/)
       .reduce((accumulator, current) => {
-        accumulator[current] = accumulator[current] + 1 || 1
-        return accumulator
-      }, Object.create(null))
+        accumulator[current] = accumulator[current] + 1 || 1;
+        return accumulator;
+      }, Object.create(null));
   }
 }
 

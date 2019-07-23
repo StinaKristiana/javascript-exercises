@@ -13,15 +13,15 @@
  * palindrome("abcdefg") === false
  */
 function reverseString(input) {
-    const chars = input.split('')
-    for (let i = input.length - 1; i >= 0; i--) {
-        result += chars[i]
-    }
-    return result
+  const chars = input.split("");
+  for (let i = input.length - 1; i >= 0; i--) {
+    result += chars[i];
+  }
+  return result;
 }
 function palindrome(str) {
-    const reversed = reverseString(str)
-    return str === reversed
+  const reversed = reverseString(str);
+  return str === reversed;
 }
 
 module.exports = palindrome;

@@ -36,16 +36,14 @@
 
 class Matrix {
   constructor(matrixString) {
-    this.rows = matrixString.split('\n')
-      .map(rowString => rowString.split(' ').map(Number))
+    this.rows = matrixString
+      .split("\n")
+      .map(rowString => rowString.split(" ").map(Number));
 
-    this.columns = transpose(this.rows)
+    this.columns = transpose(this.rows);
   }
 }
 
-const transpose = matrix => matrix[0].map((_, i) => matrix.map(row => row[i]))
-
+const transpose = matrix => matrix[0].map((_, i) => matrix.map(row => row[i]));
 
 module.exports = Matrix;
-  
-
