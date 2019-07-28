@@ -10,7 +10,9 @@
     "prettier:check": "prettier --check exercises/**/*.js"
   },
   "dependencies": {
-    "jest": "^24.8.0",
+    "jest": "^24.8.0"
+  },
+  "devDependencies": {
     "prettier": "1.18.2"
   }
 }
